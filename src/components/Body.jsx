@@ -1,5 +1,7 @@
 import Sidebar from "./Sidebar";
 import Main from "./Main";
+import WatchPage from "./WatchPage";
+import { Outlet } from "react-router-dom";
 
 const Body = () => {
   return (
@@ -7,7 +9,7 @@ const Body = () => {
       <div className="">
         <div className="grid grid-flow-col ">
           <Sidebar />
-          <Main />
+          <Outlet />
         </div>
       </div>
     </>

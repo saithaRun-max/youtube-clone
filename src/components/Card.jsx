@@ -1,16 +1,32 @@
+const Card = ({ info }) => {
+  console.log(info)
+  // const { snippet, statistics} = info;
+  // console.log(info.snippet.channelId);
 
-const Card = () => {
+  //  const [ thumbnails, channelTitle, title ] = snippet;
+  //  console.log(info)
+  // const { viewCount } = statistics;
+
+  // if (!info) return null;
   return (
     <div className="mt-5">
-    <div className="h-48 w-64 rounded-lg shadow-lg border-2 border-b-4 m-5 ">
-        <img src="" alt=""/>
-        <h3>title</h3>
-        <h4>Channel</h4>
-        <h4>Views</h4>
-      
-    </div>
-    </div>
-  )
-}
+      <div className="pt-2 w-72 rounded-lg shadow-lg  m-5 ">
+        <img
+          className="  rounded-lg"
+          src={info.snippet.thumbnails.medium.url}
+          alt="thumbnail"
+        />
+        <ul>
+          <li className="font-medium px-1  pr-5 flex-nowrap">{info.snippet.title}</li>
+          <li className="mt-2 px-1 ">{info.snippet.channelTitle}</li>
+          <p  className=" px-1">{info.statistics.viewCount} views</p>
+          
+        </ul>
 
-export default Card
+      
+      </div>
+    </div>
+  );
+};
+
+export default Card;

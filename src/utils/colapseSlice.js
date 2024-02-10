@@ -10,8 +10,11 @@ const colapseSlice = createSlice({
     toggleMenu: (state) => {
       state.isMenuOpen = !state.isMenuOpen;
     },
+    closeMenu: (state) => {
+      state.isMenuOpen = false;
+    }
   },
 });
 
-export const { toggleMenu } = colapseSlice.actions;
+export const { toggleMenu,closeMenu } = colapseSlice.actions;
 export default colapseSlice.reducer;
