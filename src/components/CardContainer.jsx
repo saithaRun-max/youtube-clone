@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Card from "./Card";
+import Card, { AdCard } from "./Card";
 import { YT_API } from "./constants";
 import { Link } from "react-router-dom";
 
@@ -20,6 +20,7 @@ const CardContainer = () => {
 
   return (
     <div className="flex flex-wrap mt-8">
+    {videos[0] && <AdCard  info={videos[0]}/>   }  
       {videos.map((video, index) => (
         <Link to={"/watch?v=" + video.id}>
           <Card info={video} key={index} />

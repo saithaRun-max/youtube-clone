@@ -12,10 +12,9 @@ const WatchPage = () => {
     dispatch(closeMenu());
   }, []);
   return (
-    <div>
+    <div className="p-5 my-2 mx-4 sm:w-[706px] sm:h-[397px] xl:w-[853px] xl:h-[480px] rounded-lg">
       <iframe
-        width="1000"
-        height="500"
+       className="w-full h-full rounded-lg"
         src={"https://www.youtube.com/embed/" + searchParams.get("v")}
         title="YouTube video player"
         frameborder="0"
@@ -23,8 +22,12 @@ const WatchPage = () => {
         allowFullS
         creen
       ></iframe>
+
+      <div>name</div>
     </div>
   );
 };
 
 export default WatchPage;
+
+ // className="mx-10 m-4 max-w-4xl w-3/4 min-h-full max-h-3.5 rounded-lg"
