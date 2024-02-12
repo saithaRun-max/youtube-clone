@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { CiSearch } from "react-icons/ci";
 import { YT_SEARCH_SUGGESIONS_API } from "./constants";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { cacheResults } from "../utils/searchSlice";
 
 const SearchBar = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -9,9 +10,16 @@ const SearchBar = () => {
   const [visible, setVisible] = useState("");
 
   const dispatch = useDispatch();
+  const searchCache = useSelector((store) => store.search);
 
   useEffect(() => {
-    const timer = setTimeout(() => getSuggesitions(), 200);
+    const timer = setTimeout(() => {
+      if (searchCache[searchQuery]) {
+        setSuggesitions(searchCache[searchQuery]);
+      } else {
+        getSuggesitions();
+      }
+    }, 200);
 
     return () => {
       clearTimeout(timer);
@@ -22,6 +30,10 @@ const SearchBar = () => {
     const data = await fetch(YT_SEARCH_SUGGESIONS_API + searchQuery);
     const json = await data.json();
     setSuggesitions(json[1]);
+
+    dispatch(cacheResults({
+      [searchQuery]: json[1],
+    }));
   };
 
   console.log(suggesitions);
