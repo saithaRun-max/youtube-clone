@@ -33,9 +33,9 @@ const Card = ({ info }) => {
 
 export const AdCard = ({ info }) => {
   return (
-    <div className="p-1 m-1  inset-60 bg-fixed bg-center ">
+    <div className="p-1 m-1  inset-36 bg-fixed bg-center ">
       <Card info={info} />
-      <div className="w-60 h-80 opacity-0 hover:opacity-100 duration-300  absolute top-36 inset-60  flex   justify-center items-center text-6xl  text-center  text-white font-semibold">
+      <div className="w-60 h-80 opacity-0 hover:opacity-100 duration-300  absolute top-36 inset-36  flex   justify-center items-center text-6xl  text-center  text-white font-semibold">
         Ad
       </div>
     </div>
