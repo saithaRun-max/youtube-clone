@@ -36,7 +36,7 @@ const SearchBar = () => {
     }));
   };
 
-  console.log(suggesitions);
+
   return (
     <>
       <div className="col-span-10 mt-3 ml-10">

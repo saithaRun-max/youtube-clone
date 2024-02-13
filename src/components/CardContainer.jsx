@@ -11,7 +11,7 @@ const CardContainer = () => {
     setVideos(json.items);
     // console.log(json);
   };
-  console.log(videos);
+
   useEffect(() => {
     getData();
   }, []);
@@ -22,8 +22,8 @@ const CardContainer = () => {
     <div className="flex flex-wrap mt-8">
     {videos[0] && <AdCard  info={videos[0]}/>   }  
       {videos.map((video, index) => (
-        <Link to={"/watch?v=" + video.id}>
-          <Card info={video} key={index} />
+        <Link  key={index} to={"/watch?v=" + video.id}>
+          <Card info={video} />
         </Link>
       ))}
     </div>

@@ -24,7 +24,7 @@ const WatchPage = () => {
         creen
       ></iframe>
 
-      <div>
+      <div className="mt-5 p-2">
         <CommentsContainer />
       </div>
     </div>
