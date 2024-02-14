@@ -26,10 +26,10 @@ const LiveChat = () => {
 
   return (
     <>
-      <div className="p-2 mx-1  ml-6 border border-black w-3/4 sm:h-[360px] xl:h-[480px] rounded-lg flex flex-col-reverse flex-nowrap justify-between items-end overflow-hidden ">
-        <div className=" w-full  ">
-          <h1 className="text-center text-nowrap">Live Chat</h1>
-          <hr className="border border-black min-w-full" />
+      {/* <div className="p-2 mx-1  ml-6 border border-black w-3/4 sm:h-[360px] xl:h-[480px] rounded-lg flex flex-col-reverse flex-nowrap justify-between items-end overflow-hidden relative">
+        <div className=" w-full ">
+          <h1 className="text-center text-nowrap fixed">Live Chat</h1>
+          <hr className="border border-black min-w-full fixed" />
           <div>
             {chatMessages.map((c, i) => (
               <ChatMessage key={i} name={c.name} message={c.message} />
@@ -37,7 +37,21 @@ const LiveChat = () => {
           </div>
         </div>
       </div>
-      <form className=" w-full  ">
+      */}
+
+      <div className="relative w-full border border-black sm:h-[397px] xl:h-[480px] rounded-lg p-2 mx-2 overflow-y-scroll  ">
+        <div className="sticky">
+        <h1 className="text-center text-nowrap">Live Chat</h1>
+        <hr className="border border-black min-w-full " />
+        </div>
+        <div className=
+        "">
+        {chatMessages.map((c, i) => (
+              <ChatMessage key={i} name={c.name} message={c.message} />
+            ))}
+        </div>
+        <div className="sticky z-30 top-72 left-0 right-0">
+        <form className=" w-full  ">
         <hr className="border border-black min-w-full my-2" />
         <div className=" flex justify-center w-full">
           <input
@@ -49,6 +63,8 @@ const LiveChat = () => {
           </button>
         </div>
       </form>
+        </div>
+      </div>
     </>
   );
 };
