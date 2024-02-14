@@ -3,6 +3,8 @@ import { useDispatch } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 import { closeMenu } from "../utils/colapseSlice";
 import CommentsContainer from "./CommentsContainer";
+import LiveChat from "./LiveChat";
+import ChatMessage from "./ChatMessage";
 
 const WatchPage = () => {
   const [searchParams] = useSearchParams();
@@ -13,21 +15,29 @@ const WatchPage = () => {
     dispatch(closeMenu());
   }, []);
   return (
-    <div className="p-5 my-2 mx-4 sm:w-[706px] sm:h-[397px] xl:w-[853px] xl:h-[480px] rounded-lg">
-      <iframe
-        className="w-full h-full rounded-lg"
-        src={"https://www.youtube.com/embed/" + searchParams.get("v")}
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowFullS
-        creen
-      ></iframe>
+    <>
+      <div className="p-5 my-2 mx-4  flex">
+        <div className="w-full h-full rounded-lg">
+          {" "}
+          <iframe
+            className="sm:w-[606px] sm:h-[397px] xl:w-[853px] xl:h-[480px]  rounded-lg"
+            src={"https://www.youtube.com/embed/" + searchParams.get("v")}
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullS
+            creen
+          ></iframe>
 
-      <div className="mt-5 p-2">
-        <CommentsContainer />
+         
+          <div className="mt-5 p-2">
+            <CommentsContainer />
+          </div>
+        </div>
+
+        <LiveChat />
       </div>
-    </div>
+    </>
   );
 };
 

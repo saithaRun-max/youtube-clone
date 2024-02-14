@@ -1,4 +1,3 @@
-
 export const namesMale = [
   "Aarav",
   "Vihaan",
@@ -64,7 +63,6 @@ export const namesFemale = [
   "Siya",
 ];
 
-
 export const commentData = [
   {
     name: namesMale[0],
@@ -100,32 +98,37 @@ export const commentData = [
                                 replies: [],
                               },
                             ],
-                          }, {
-                            name: namesFemale[3],
+                          },
+                          {
+                            name: namesFemale[14],
                             text: "Ea quis laborum minim pariatur amet tempor.",
                             replies: [],
                           },
                         ],
-                      }, {
-                        name: namesFemale[3],
+                      },
+                      {
+                        name: namesFemale[15],
                         text: "Ea quis laborum minim pariatur amet tempor.",
                         replies: [],
                       },
                     ],
-                  }, {
-                    name: namesFemale[3],
+                  },
+                  {
+                    name: namesFemale[16],
                     text: "Ea quis laborum minim pariatur amet tempor.",
                     replies: [],
                   },
                 ],
-              }, {
-                name: namesFemale[3],
+              },
+              {
+                name: namesFemale[17],
                 text: "Ea quis laborum minim pariatur amet tempor.",
                 replies: [],
               },
             ],
-          }, {
-            name: namesFemale[3],
+          },
+          {
+            name: namesFemale[18],
             text: "Ea quis laborum minim pariatur amet tempor.",
             replies: [],
           },
@@ -143,7 +146,11 @@ export const commentData = [
                 name: namesMale[5],
                 text: "Est aliqua amet sint labore in cillum aliquip laboris mollit Lorem aliquip exercitation officia sit.",
                 replies: [
-                  { name: namesFemale[5], text: "Proident nostrud mollit duis pariatur aliquip amet occaecat irure anim laborum duis esse ullamco laborum.", replies: [] },
+                  {
+                    name: namesFemale[5],
+                    text: "Proident nostrud mollit duis pariatur aliquip amet occaecat irure anim laborum duis esse ullamco laborum.",
+                    replies: [],
+                  },
                 ],
               },
             ],
@@ -159,28 +166,56 @@ export const commentData = [
       {
         name: namesFemale[6],
         text: "Anim Lorem fugiat eiusmod velit deserunt ad esse ut.",
-        replies: [{ name: namesMale[7], text: "Irure commodo amet consequat qui elit magna eiusmod quis duis ad ex esse.", replies: [] }],
+        replies: [
+          {
+            name: namesMale[7],
+            text: "Irure commodo amet consequat qui elit magna eiusmod quis duis ad ex esse.",
+            replies: [],
+          },
+        ],
       },
-      { name: namesFemale[7], text: "Irure ad qui officia aliqua adipisicing consectetur culpa deserunt cupidatat fugiat adipisicing do non eu.", replies: [] },
+      {
+        name: namesFemale[7],
+        text: "Irure ad qui officia aliqua adipisicing consectetur culpa deserunt cupidatat fugiat adipisicing do non eu.",
+        replies: [],
+      },
     ],
   },
   {
     name: namesMale[8],
     text: "In pariatur in eu commodo velit in minim aute do Lorem excepteur.",
     replies: [
-      { name: namesFemale[8], text: "Aliquip exercitation qui aliquip culpa magna amet exercitation deserunt dolore deserunt sunt.", replies: [] },
-      { name: namesMale[9], text: "Nostrud magna consequat dolore consequat amet mollit pariatur ex aliqua culpa.", replies: [] },
+      {
+        name: namesFemale[8],
+        text: "Aliquip exercitation qui aliquip culpa magna amet exercitation deserunt dolore deserunt sunt.",
+        replies: [],
+      },
+      {
+        name: namesMale[9],
+        text: "Nostrud magna consequat dolore consequat amet mollit pariatur ex aliqua culpa.",
+        replies: [],
+      },
     ],
   },
   {
     name: namesFemale[9],
     text: "Et laborum tempor nisi exercitation consectetur pariatur do mollit sunt mollit do ipsum aute nisi.",
     replies: [
-      { name: namesMale[10], text: "Deserunt culpa id ullamco amet non sit consequat.", replies: [] },
+      {
+        name: namesMale[10],
+        text: "Deserunt culpa id ullamco amet non sit consequat.",
+        replies: [],
+      },
       {
         name: namesFemale[11],
         text: "lore 200",
-        replies: [{ name: namesFemale[0], text: "Ut ex minim eiusmod laboris mollit consectetur.", replies: [] }],
+        replies: [
+          {
+            name: namesFemale[0],
+            text: "Ut ex minim eiusmod laboris mollit consectetur.",
+            replies: [],
+          },
+        ],
       },
     ],
   },
@@ -188,9 +223,16 @@ export const commentData = [
     name: namesMale[12],
     text: "Ex aliquip ullamco excepteur irure velit officia dolor in.",
     replies: [
-      { name: namesFemale[13], text: "Nostrud do proident reprehenderit sunt amet adipisicing occaecat velit.", replies: [] },
-      { name: namesMale[13], text: "Cupidatat velit laboris ad sunt ipsum fugiat id anim dolor laborum.", replies: [] },
+      {
+        name: namesFemale[13],
+        text: "Nostrud do proident reprehenderit sunt amet adipisicing occaecat velit.",
+        replies: [],
+      },
+      {
+        name: namesMale[13],
+        text: "Cupidatat velit laboris ad sunt ipsum fugiat id anim dolor laborum.",
+        replies: [],
+      },
     ],
   },
 ];
-
