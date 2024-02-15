@@ -20,6 +20,11 @@ const appRouter = createBrowserRouter([
         path: "watch",
         element: <WatchPage />,
       },
+      {
+        path: "list/:itemId",
+        element:  <Main />,
+      },
+
     ],
   },
 ]);

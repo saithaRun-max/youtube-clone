@@ -1,13 +1,13 @@
 import ChatMessage from "./ChatMessage";
-import { namesFemale } from "../utils/helper";
-import { namesMale } from "../utils/helper";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addMessage } from "../utils/chatSlice";
+import generateRandomName from "./generateRadomName";
 
 const LiveChat = () => {
+  const [inputMessage, setInputMessage] = useState("");
   const dispatch = useDispatch();
-  const chatMessages = useSelector((store) => store.chat.message);
+  const chatMessages = useSelector((store) => store.chat.messages);
 
   useEffect(() => {
     const i = setInterval(() => {
@@ -15,56 +15,49 @@ const LiveChat = () => {
 
       dispatch(
         addMessage({
-          name: "akashay saini",
+          name: generateRandomName(),
           message: "lorem 100 nmmw",
         })
       );
-    }, 2000);
+    }, 1500);
 
     return () => clearInterval(i);
   }, []);
 
   return (
     <>
-      {/* <div className="p-2 mx-1  ml-6 border border-black w-3/4 sm:h-[360px] xl:h-[480px] rounded-lg flex flex-col-reverse flex-nowrap justify-between items-end overflow-hidden relative">
-        <div className=" w-full ">
-          <h1 className="text-center text-nowrap fixed">Live Chat</h1>
-          <hr className="border border-black min-w-full fixed" />
-          <div>
-            {chatMessages.map((c, i) => (
-              <ChatMessage key={i} name={c.name} message={c.message} />
-            ))}
-          </div>
-        </div>
+      <div className="bg-slate-100 mx-5 w-full border border-black sm:h-[397px] xl:h-[480px] rounded-lg overflow-y-scroll flex flex-col-reverse">
+        {chatMessages.map((c) => (
+          <ChatMessage name={c.name} message={c.message} />
+        ))}
       </div>
-      */}
-
-      <div className="relative w-full border border-black sm:h-[397px] xl:h-[480px] rounded-lg p-2 mx-2 overflow-y-scroll  ">
-        <div className="sticky">
-        <h1 className="text-center text-nowrap">Live Chat</h1>
-        <hr className="border border-black min-w-full " />
-        </div>
-        <div className=
-        "">
-        {chatMessages.map((c, i) => (
-              <ChatMessage key={i} name={c.name} message={c.message} />
-            ))}
-        </div>
-        <div className="sticky z-30 top-72 left-0 right-0">
-        <form className=" w-full  ">
-        <hr className="border border-black min-w-full my-2" />
-        <div className=" flex justify-center w-full">
-          <input
-            className=" rounded-lg focus:outline-none border border-black h-10"
-            type="text"
-          />
-          <button className="px-5 mx-2 rounded-lg border border-black ">
-            Send
-          </button>
-        </div>
+      <form
+        className="w-full p-2 mx-5 border border-black rounded-lg"
+        onSubmit={(e) => {
+          e.preventDefault(),
+            setInputMessage(""),
+            dispatch(
+              addMessage({
+                name: "User",
+                message: inputMessage,
+              })
+            );
+        }}
+      >
+        <input
+          value={inputMessage}
+          onChange={(e) => setInputMessage(e.target.value)}
+          type="text"
+          className="border border-black px-2"
+        />
+        <button
+          type="submit"
+          className="mx-2 p-1 px-2 bg-slate-300 border rounded-lg"
+        >
+          {" "}
+          Send
+        </button>
       </form>
-        </div>
-      </div>
     </>
   );
 };

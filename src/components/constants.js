@@ -13,5 +13,5 @@ export const YT_SEARCH_SUGGESIONS_API =
   "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
 
 
-
+export const liveChatMeassageCount = 25;
 

@@ -19,15 +19,21 @@ const WatchPage = () => {
       <div className="p-5 my-2 mx-4  flex">
         <div className="w-full h-full rounded-lg">
           {" "}
-          <iframe
-            className="sm:w-[606px] sm:h-[397px] xl:w-[853px] xl:h-[480px]  rounded-lg"
-            src={"https://www.youtube.com/embed/" + searchParams.get("v")}
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullS
-            creen
-          ></iframe>
+          <div className="flex">
+            <iframe
+              className="sm:w-[606px] sm:h-[397px] xl:w-[853px] xl:h-[480px]  rounded-lg"
+              src={"https://www.youtube.com/embed/" + searchParams.get("v")}
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullS
+              creen
+            ></iframe>
+          
+          <div>
+          <LiveChat />
+          </div>
+          </div>
 
          
           <div className="mt-5 p-2">
@@ -35,7 +41,7 @@ const WatchPage = () => {
           </div>
         </div>
 
-        <LiveChat />
+       
       </div>
     </>
   );

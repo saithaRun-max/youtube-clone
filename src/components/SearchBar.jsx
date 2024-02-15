@@ -3,6 +3,7 @@ import { CiSearch } from "react-icons/ci";
 import { YT_SEARCH_SUGGESIONS_API } from "./constants";
 import { useDispatch, useSelector } from "react-redux";
 import { cacheResults } from "../utils/searchSlice";
+import { Link } from "react-router-dom";
 
 const SearchBar = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -31,11 +32,12 @@ const SearchBar = () => {
     const json = await data.json();
     setSuggesitions(json[1]);
 
-    dispatch(cacheResults({
-      [searchQuery]: json[1],
-    }));
+    dispatch(
+      cacheResults({
+        [searchQuery]: json[1],
+      })
+    );
   };
-
 
   return (
     <>
@@ -55,7 +57,7 @@ const SearchBar = () => {
           <div className="fixed  bg-white w-1/4 shadow-lg  border  border-green-200 rounded-lg mx-12">
             <ul className="py-2 px-3 ">
               {suggesitions.map((s) => (
-                <li
+              <li
                   key={s}
                   className="shadow-sm hover:bg-gray-300 text-nowrap overflow-clip"
                 >
