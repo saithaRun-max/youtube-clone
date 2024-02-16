@@ -4,7 +4,7 @@ import { RxAvatar } from "react-icons/rx";
 import { useDispatch } from "react-redux";
 import { toggleMenu } from "../utils/colapseSlice";
 import { logo } from "./constants";
-import { Link } from "react-router-dom";
+
 
 const Head = () => {
   const dispatch = useDispatch();

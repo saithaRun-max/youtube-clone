@@ -236,3 +236,51 @@ export const commentData = [
     ],
   },
 ];
+
+export const segments = [
+  "Trending",
+  "Shoping",
+  "Music",
+  "Movies",
+  "Live",
+  "Gaming",
+  "News",
+  "Sports",
+];
+
+
+
+export const btnNames = [
+  "All",
+  "News",
+  "Movies",
+  "Music",
+  "Sports",
+  "Shoping",
+  "Trending",
+  "Recently Uploaded",
+  "New to you",
+  "Gaming",
+  "Ashay Saini",
+
+];
+
+export const mainNavigation = [
+  "Home",
+"Shorts",
+"Subscriptions"
+];
+
+export const userSubscriptions =[
+  "Akshay Saini",
+"Tseries",
+"Telangana-Hub",
+"React Developer",
+];
+
+export const userChannel = [
+  "Your channel",
+"History",
+"Your videos",
+"Watch later"
+]

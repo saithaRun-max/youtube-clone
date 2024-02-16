@@ -1,15 +1,13 @@
 import Button from "./Button";
-
+import { btnNames } from "../utils/helper";
+import { Link } from "react-router-dom";
 const ButtonList = () => {
-
-    const names = ["All", "T-Series", "Ashay Saini", "Telangana", "United States","All", "T-Series", "Ashay Saini", "Telangana", "United States"]
-
   return (
-    <div className="flex">
-        {
-            names.map((item, index)=>  <Button name={item} key={index} /> )
-        }
-     
+    <div className="mx-2 sm:w-[710px] xl:w-full flex flex-row  flex-nowrap overflow-x-scroll">
+      {btnNames.map((item, index) => (
+        <Link to={item}>
+        <Button  name={item} key={index} /></Link>
+      ))}
     </div>
   );
 };

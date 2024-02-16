@@ -6,12 +6,16 @@ import Store from "./utils/store";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Main from "./components/Main";
 import WatchPage from "./components/WatchPage";
+import ErrorPage from "./components/ErrorPage";
 
 const appRouter = createBrowserRouter([
   {
     path: "/",
     element: <Body />,
+
     children: [
+      { path: "*", element: <ErrorPage /> },
+
       {
         path: "/",
         element: <Main />,
@@ -22,9 +26,12 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "list/:itemId",
-        element:  <Main />,
+        element: <Main />,
       },
-
+      {
+        path: "Home",
+        element: <Main />,
+      },
     ],
   },
 ]);

@@ -19,9 +19,9 @@ const WatchPage = () => {
       <div className="p-5 my-2 mx-4  flex">
         <div className="w-full h-full rounded-lg">
           {" "}
-          <div className="flex">
+          <div className="flex  sm:flex-col xl:flex-row">
             <iframe
-              className="sm:w-[606px] sm:h-[397px] xl:w-[853px] xl:h-[480px]  rounded-lg"
+              className="sm:w-[696px] sm:h-[397px] xl:w-[853px] xl:h-[480px]  rounded-lg"
               src={"https://www.youtube.com/embed/" + searchParams.get("v")}
               title="YouTube video player"
               frameborder="0"
@@ -29,19 +29,15 @@ const WatchPage = () => {
               allowFullS
               creen
             ></iframe>
-          
-          <div>
-          <LiveChat />
-          </div>
-          </div>
 
-         
+            <div className=" ">
+              <LiveChat />
+            </div>
+          </div>
           <div className="mt-5 p-2">
             <CommentsContainer />
           </div>
         </div>
-
-       
       </div>
     </>
   );
