@@ -15,3 +15,9 @@ export const YT_SEARCH_SUGGESIONS_API =
 
 export const liveChatMeassageCount = 25;
 
+
+export const Video_API = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&key=${API_KEY}&id=` 
+
+
+export const YT_API_BY_KEYWORDS = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=`
+

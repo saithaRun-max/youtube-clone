@@ -4,6 +4,7 @@ import { YT_SEARCH_SUGGESIONS_API } from "./constants";
 import { useDispatch, useSelector } from "react-redux";
 import { cacheResults } from "../utils/searchSlice";
 import { Link } from "react-router-dom";
+import { YT_API_BY_KEYWORDS } from "./constants";
 
 const SearchBar = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -12,6 +13,8 @@ const SearchBar = () => {
 
   const dispatch = useDispatch();
   const searchCache = useSelector((store) => store.search);
+
+
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -54,12 +57,13 @@ const SearchBar = () => {
           <CiSearch className="w-8 h-6 " />
         </button>
         {visible && (
-          <div className="fixed  bg-white w-1/4 shadow-lg  border  border-green-200 rounded-lg mx-12">
+          <div className="fixed  bg-slate-100 w-1/4 sm:w-[196px] xl:w-[516px]  border  border-green-200 rounded-md mx-12">
             <ul className="py-2 px-3 ">
               {suggesitions.map((s) => (
               <li
                   key={s}
                   className="shadow-sm hover:bg-gray-300 text-nowrap overflow-clip"
+                 
                 >
                   {s}
                 </li>

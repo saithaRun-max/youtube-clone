@@ -5,8 +5,8 @@ const ButtonList = () => {
   return (
     <div className="mx-2 sm:w-[710px] xl:w-full flex flex-row  flex-nowrap overflow-x-scroll">
       {btnNames.map((item, index) => (
-        <Link to={item}>
-        <Button  name={item} key={index} /></Link>
+        <Link to={"/" + item.toLocaleLowerCase()} key={index}>
+        <Button  name={item}  /></Link>
       ))}
     </div>
   );

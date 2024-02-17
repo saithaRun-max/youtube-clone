@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Card, { AdCard } from "./Card";
 import { YT_API } from "./constants";
 import { Link } from "react-router-dom";
+import watchPage from "./WatchPage";
 
 const CardContainer = () => {
   const [videos, setVideos] = useState([]);
@@ -18,16 +19,31 @@ const CardContainer = () => {
 
   if (!videos) return null;
 
+// console.log(videos)
+
   return (
+    <>
     <div className="flex flex-wrap mt-8">
-    {videos[0] && <AdCard  info={videos[0]}/>   }  
+      {videos[0] && <AdCard info={videos[0]} />}
       {videos.map((video, index) => (
-        <Link  key={index} to={"/watch?v=" + video.id}>
+        <Link key={index} to={"/watch?v=" + video.id}>
           <Card info={video} />
         </Link>
       ))}
     </div>
+
+
+
+    </>
   );
 };
+
+
+
+
+
+
+
+
 
 export default CardContainer;

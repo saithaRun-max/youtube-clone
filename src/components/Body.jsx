@@ -1,6 +1,4 @@
 import Sidebar from "./Sidebar";
-import Main from "./Main";
-import WatchPage from "./WatchPage";
 import { Outlet } from "react-router-dom";
 
 const Body = () => {
